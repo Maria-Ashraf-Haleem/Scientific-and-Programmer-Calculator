@@ -1,1 +1,1 @@
-# simpleCalculator
+Scientific and Programmer Calculator
