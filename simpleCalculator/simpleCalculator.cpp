@@ -53,9 +53,6 @@ int main()
 	double n2 = 0.0;
 	double answer = 0.0;
 	char op = '\n';
-	showCalculator();
-	cout << "Enter an Operation to perform: \n";
-	cin >> op;
 	bool again = 0;
 	while (op != '.')
 	{
@@ -84,6 +81,8 @@ int main()
 		else
 		{
 			showCalculator();
+			cout << "Enter an Operation to perform: \n";
+			cin >> op;
 			if (op == '+' || op == '-' || op == '*' || op == '/' || op == 'm')
 			{
 				cout << "Enter the first number: \n";
