@@ -61,7 +61,22 @@ int main()
 
 			showAnswer(answer);
 			cout << "Enter an Operation to perform: \n";
-			cin >> op;
+			while (true)
+			{
+				cin >> op;
+				if (op == '+' || op == '-' || op == '*' || op == '/' || op == 'm' || op == 'l' ||
+					op == 'S' || op == 'C' || op == 'P' || op == 'r' || op == 'k' || op == 't' ||
+					op == 's' || op == 'c' || op == '.')
+				{
+					break;
+				}
+				else
+				{
+					cin.clear();
+					cin.ignore(numeric_limits<streamsize>::max(), '\n');
+					cout << "Please Enter a Valid operation like + , -, *, / , m, s, etc ...\n";
+				}
+			}
 			if (op == '+' || op == '-' || op == '*' || op == '/' || op == 'm')
 			{
 				n1 = answer;
@@ -77,12 +92,29 @@ int main()
 			{
 				n1 = answer;
 			}
+			system("cls"); ////////////////////////
 		}
 		else
 		{
 			showCalculator();
 			cout << "Enter an Operation to perform: \n";
-			cin >> op;
+			while (true)
+			{
+				cin >> op;
+				if (op == '+' || op == '-' || op == '*' || op == '/' || op == 'm' || op == 'l' ||
+					op == 'S' || op == 'C' || op == 'P' || op == 'r' || op == 'k' || op == 't' ||
+					op == 's' || op == 'c' || op == '.')
+				{
+					break;
+				}
+				else
+				{
+					cin.clear();
+					cin.ignore(numeric_limits<streamsize>::max(), '\n');
+					cout << "Please Enter a Valid operation like + , -, *, / , m, s, etc ...\n";
+				}
+			}
+
 			if (op == '+' || op == '-' || op == '*' || op == '/' || op == 'm')
 			{
 				cout << "Enter the first number: \n";
@@ -101,6 +133,7 @@ int main()
 				cin >> n1;
 			}
 			again = 1;
+			system("cls"); /////////////////////////////////////
 		}
 		switch (op)
 		{
@@ -116,7 +149,7 @@ int main()
 		case'/':
 			if (n2 == 0)
 			{
-				cout << "Cannot Divide by Zero Bro !!!";
+				cout << "Cannot Divide by Zero Bro !!!\n";
 				break;
 			}
 			else
@@ -168,7 +201,6 @@ int main()
 			cout << "Invalid Operation bro! \n";
 			break;
 		}
-		system("cls");
 	}
 	return 0;
 
