@@ -47,6 +47,22 @@ void showAnswer(double answer)
 	cout << "-------------------------------------------------------" << endl;
 }
 
+void showProgrammer()
+{
+	cout << "---------------------------------------------------------\n\n";
+	cout << "        Decimal              |         Binary            \n ";
+	cout << "                            |                           \n";
+	cout << "    ----------------         |       --------------      \n\n";
+	cout << "                             |                            \n";
+	cout << "      Hexadecimal            |          Octal            \n";
+	cout << "                             |                           \n\n";
+	cout << "1- Decimal to any other system \n";
+	cout << "2- any other system to Decimal \n";
+	cout << "3- Hexadecimal to octal and vice versa \n";
+	cout << "4- Octal to Binary and vice versa \n";
+	cout << "5- Hexadecimal to Binary and vice versa \n";
+	cout << "---------------------------------------------------------\n";
+}
 int main()
 {
 	cout << "Do you want any Calculator ? \n\n";
@@ -212,7 +228,32 @@ int main()
 	}
 	else
 	{
+		showProgrammer();
+		cout << "\nEnter a number that represent the operation you want to do: \n\n";
+		cout << "The operation = ";
+		int inp;
+		cin >> inp;
+		if (inp == 1)
+		{
 
+		}
+		else if (inp == 2)
+		{
+			cout << "Enter the number you want to convert to decimal:\n";
+			int n, x;
+			cin >> n;
+			cout << "Enter the Base:\n";
+			cin >> x;
+			int res = 0;
+			int i = 0;
+			while (n > 0)
+			{
+				res += pow(x, i) * (n % 10);
+				i++;
+				n /= 10;
+			}
+			cout << "The number is : " << res;
+		}
 	}
 	return 0;
 
