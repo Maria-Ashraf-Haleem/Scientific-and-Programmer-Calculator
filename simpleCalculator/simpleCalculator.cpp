@@ -233,11 +233,33 @@ int main()
 		cout << "The operation = ";
 		int inp;
 		cin >> inp;
-		if (inp == 1)
+		if (inp == 1) //  Decimal to any other system 
 		{
-
+			cout << "Enter the number you want to convert it from Decimal: \n";
+			int n;
+			cin >> n;
+			cout << "Enter the system number you want to convert to it: \n";
+			int x;
+			cin >> x;
+			int rem = 0;
+			string result = "";
+			while (n > 0)
+			{
+				rem = n % x;
+				if (rem < 10)
+				{
+					result += (char)('0' + rem);
+				}
+				else
+				{
+					result += (char)('A' + rem - 10);
+				}
+				n = n / x;
+			}
+			reverse(result.begin(), result.end());
+			cout << "The number is : " << result;
 		}
-		else if (inp == 2)
+		else if (inp == 2) // any other system to Decimal
 		{
 			cout << "Enter the number you want to convert to decimal:\n";
 			int n, x;
@@ -253,6 +275,10 @@ int main()
 				n /= 10;
 			}
 			cout << "The number is : " << res;
+		}
+		else if (inp == 3) // Hexadecimal to octal and vice versa
+		{
+
 		}
 	}
 	return 0;
