@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <iomanip>
+#include <algorithm>
 using namespace std;
 
 void showCalculator()
@@ -278,7 +279,123 @@ int main()
 		}
 		else if (inp == 3) // Hexadecimal to octal and vice versa
 		{
+			int input;
+			cout << "1- Hexadecimal to octal " << endl;
+			cout << "2- octal to Hexadecimal " << endl;
+			cin >> input;
+			if (input == 1)
+			{
+				string s;
+				cout << "Enter the number:  ";
+				cin >> s;
+				transform(s.begin(), s.end(), s.begin(), ::toupper);
+				string res = "";
+				int len = s.length();
+				for (int i = 0; i < len; i++) // ãä åíßÓÇÏíÓíãÇá áÈÇíäÑí//// 
+				{
+					switch (s[i])
+					{
+					case 'A':
+						res += "1010";
+						break;
+					case 'B':
+						res += "1011";
+						break;
+					case 'C':
+						res += "1100";
+						break;
+					case'D':
+						res += "1101";
+						break;
+					case'E':
+						res += "1110";
+						break;
+					case'F':
+						res += "1111";
+						break;
+					case '0':
+						res += "0000"; 
+						break;
+					case'1':
+						res += "0001";
+						break;
+					case'2':
+						res += "0010";
+						break;
+					case'3':
+						res += "0011";
+						break;
+					case'4':
+						res += "0100";
+						break;
+					case'5':
+						res += "0101";
+						break;
+					case'6':
+						res += "0110";
+						break;
+					case'7':
+						res += "0111";
+						break;
+					case'8':
+						res += "1000";
+						break;
+					case'9':
+						res += "1001";
+						break;
+					default:
+						cout << "Invalid hexadecimal character!" << endl;
+						return 1;
+					}
+				}
+				//// ÈÚÏ ßÏå åäÍæáå ãä ÈÇíäÑí áÇæßÊÇá///////
+				while (res.length() % 3 != 0)
+				{
+					res = "0" + res;
+				}
+				int len2 = res.length();
+				string octal = "";
+				for (int i = 0, j = 1, k = 2; i < len2; i += 3, j += 3, k += 3)
+				{
+					if (res[i] == '0' && res[j] == '0' && res[k] == '0')
+					{
+						octal = octal + "0";
+					}
+					else if (res[i] == '0' && res[j] == '0' && res[k] == '1')
+					{
+						octal = octal + "1";
+					}
+					else if (res[i] == '0' && res[j] == '1' && res[k] == '0')
+					{
+						octal = octal + "2";
+					}
+					else if (res[i] == '0' && res[j] == '1' && res[k] == '1')
+					{
+						octal = octal + "3";
+					}
+					else if (res[i] == '1' && res[j] == '0' && res[k] == '0')
+					{
+						octal = octal + "4";
+					}
+					else if (res[i] == '1' && res[j] == '0' && res[k] == '1')
+					{
+						octal = octal + "5";
+					}
+					else if (res[i] == '1' && res[j] == '1' && res[k] == '0')
+					{
+						octal = octal + "6";
+					}
+					else if (res[i] == '1' && res[j] == '1' && res[k] == '1')
+					{
+						octal = octal + "7";
+					}
+				}
+				cout << "The OCTAL number is : " << octal;
+			}
+			else if (input == 2)
+			{
 
+			}
 		}
 	}
 	return 0;
