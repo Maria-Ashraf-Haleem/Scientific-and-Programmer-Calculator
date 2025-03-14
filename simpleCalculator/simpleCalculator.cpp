@@ -281,7 +281,7 @@ int main()
 		{
 			int input;
 			cout << "1- Hexadecimal to octal " << endl;
-			cout << "2- octal to Hexadecimal " << endl;
+			cout << "2- Octal to Hexadecimal " << endl;
 			cin >> input;
 			if (input == 1)
 			{
@@ -392,10 +392,127 @@ int main()
 				}
 				cout << "The OCTAL number is : " << octal;
 			}
-			else if (input == 2)
+			else if (input == 2) /// octal to hexadecimal /////
 			{
-
+				cout << "Enter the number : ";
+				int n;
+				cin >> n;
+				string bin = "";
+				int digit;
+				while (n > 0)  //// octal to binary ///////
+				{
+					digit = n % 10;
+					switch (digit)
+					{
+					case 0:
+						bin += "000";
+						break;
+					case 1:
+						bin += "001";
+						break;
+					case 2:
+						bin += "010";
+						break;
+					case 3:
+						bin += "011";
+						break;
+					case 4:
+						bin += "100";
+						break;
+					case 5:
+						bin += "101";
+						break;
+					case 6:
+						bin += "110";
+						break;
+					case 7:
+						bin += "111";
+						break;
+					}
+					n /= 10;
+				}
+				reverse(bin.begin(), bin.end());
+				while (bin.length() %4 != 0)
+				{
+					bin = "0" + bin;
+				}
+				////////binary to Hexadecimal//////////
+				string hex = "";
+				int len = bin.length();
+				for (int i = 0; i < len; i+=4)
+				{
+					string bits = bin.substr(i, 4);
+					if (bits == "0000")
+					{
+						hex += "0";
+					}
+					else if (bits == "0001")
+					{
+						hex += "1";
+					}
+					else if (bits == "0010")
+					{
+						hex += "2";
+					}
+					else if (bits == "0011")
+					{
+						hex += "3";
+					}
+					else if (bits == "0100")
+					{
+						hex += "4";
+					}
+					else if (bits == "0101")
+					{
+						hex += "5";
+					}
+					else if (bits == "0110")
+					{
+						hex += "6";
+					}
+					else if (bits == "0111")
+					{
+						hex += "7";
+					}
+					else if (bits == "1000")
+					{
+						hex += "8";
+					}
+					else if (bits == "1001")
+					{
+						hex += "9";
+					}
+					else if (bits == "1010")
+					{
+						hex += "A";
+					}
+					else if (bits == "1011")
+					{
+						hex += "B";
+					}
+					else if (bits == "1100")
+					{
+						hex += "C";
+					}
+					else if (bits == "1101")
+					{
+						hex += "D";
+					}
+					else if (bits == "1110")
+					{
+						hex += "E";
+					}
+					else if (bits == "1111")
+					{
+						hex += "F";
+					}
+				}
+				cout << "The number is : " << hex;
 			}
+		}
+		else if (inp == 4) //// Octal to Binary and vice versa
+		{
+
 		}
 	}
 	return 0;
