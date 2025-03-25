@@ -512,7 +512,260 @@ int main()
 		}
 		else if (inp == 4) //// Octal to Binary and vice versa
 		{
-
+			int input;
+			cout << "1- Octal to binary" << endl;
+			cout << "2- Binary to Octal" << endl;
+			cin >> input;
+			if (input == 1)
+			{
+				cout << "Enter the number : ";
+				int n;
+				cin >> n;
+				string bin = "";
+				int digit;
+				while (n > 0)  //// octal to binary ///////
+				{
+					digit = n % 10;
+					switch (digit)
+					{
+					case 0:
+						bin += "000";
+						break;
+					case 1:
+						bin += "001";
+						break;
+					case 2:
+						bin += "010";
+						break;
+					case 3:
+						bin += "011";
+						break;
+					case 4:
+						bin += "100";
+						break;
+					case 5:
+						bin += "101";
+						break;
+					case 6:
+						bin += "110";
+						break;
+					case 7:
+						bin += "111";
+						break;
+					}
+					n /= 10;
+				}
+				reverse(bin.begin(), bin.end());
+				while (bin.length() % 4 != 0)
+				{
+					bin = "0" + bin;
+				}
+				cout << "The number is : " << bin;
+			}
+			else if (input == 2) ////////////// binary to octal //////////
+			{
+				string res;
+				cout << "Enter the number : ";
+				cin >> res;
+				while (res.length() % 3 != 0)
+				{
+					res = "0" + res;
+				}
+				int len2 = res.length();
+				string octal = "";
+				for (int i = 0, j = 1, k = 2; i < len2; i += 3, j += 3, k += 3)
+				{
+					if (res[i] == '0' && res[j] == '0' && res[k] == '0')
+					{
+						octal = octal + "0";
+					}
+					else if (res[i] == '0' && res[j] == '0' && res[k] == '1')
+					{
+						octal = octal + "1";
+					}
+					else if (res[i] == '0' && res[j] == '1' && res[k] == '0')
+					{
+						octal = octal + "2";
+					}
+					else if (res[i] == '0' && res[j] == '1' && res[k] == '1')
+					{
+						octal = octal + "3";
+					}
+					else if (res[i] == '1' && res[j] == '0' && res[k] == '0')
+					{
+						octal = octal + "4";
+					}
+					else if (res[i] == '1' && res[j] == '0' && res[k] == '1')
+					{
+						octal = octal + "5";
+					}
+					else if (res[i] == '1' && res[j] == '1' && res[k] == '0')
+					{
+						octal = octal + "6";
+					}
+					else if (res[i] == '1' && res[j] == '1' && res[k] == '1')
+					{
+						octal = octal + "7";
+					}
+				}
+				cout << "The OCTAL number is : " << octal;
+			}
+		}
+		else if (inp == 5) /////// Hexadecimal to Binary and vice versa ///////
+		{
+			int input;
+			cout << "1- Hexadecimal to Binary" << endl;
+			cout << "2- Binary to Hexadecimal" << endl;
+			cin >> input;
+			if (input == 1)
+			{
+				string s;
+				cout << "Enter the number:  ";
+				cin >> s;
+				transform(s.begin(), s.end(), s.begin(), ::toupper);
+				string res = "";
+				int len = s.length();
+				for (int i = 0; i < len; i++) // ãä åíßÓÇÏíÓíãÇá áÈÇíäÑí//// 
+				{
+					switch (s[i])
+					{
+					case 'A':
+						res += "1010";
+						break;
+					case 'B':
+						res += "1011";
+						break;
+					case 'C':
+						res += "1100";
+						break;
+					case'D':
+						res += "1101";
+						break;
+					case'E':
+						res += "1110";
+						break;
+					case'F':
+						res += "1111";
+						break;
+					case '0':
+						res += "0000";
+						break;
+					case'1':
+						res += "0001";
+						break;
+					case'2':
+						res += "0010";
+						break;
+					case'3':
+						res += "0011";
+						break;
+					case'4':
+						res += "0100";
+						break;
+					case'5':
+						res += "0101";
+						break;
+					case'6':
+						res += "0110";
+						break;
+					case'7':
+						res += "0111";
+						break;
+					case'8':
+						res += "1000";
+						break;
+					case'9':
+						res += "1001";
+						break;
+					default:
+						cout << "Invalid hexadecimal character!" << endl;
+						return 1;
+					}
+				}
+				cout << "The number is : " << res;
+			}
+			else if (input == 2) ////////////// Binary to Hexa decimal //////////////
+			{
+				string bin;
+				cout << "Enter the number : ";
+				cin >> bin;
+				while (bin.length() % 4 != 0)
+				{
+					bin = "0" + bin;
+				}
+				////////binary to Hexadecimal//////////
+				string hex = "";
+				int len = bin.length();
+				for (int i = 0; i < len; i += 4)
+				{
+					string bits = bin.substr(i, 4);
+					if (bits == "0000")
+					{
+						hex += "0";
+					}
+					else if (bits == "0001")
+					{
+						hex += "1";
+					}
+					else if (bits == "0010")
+					{
+						hex += "2";
+					}
+					else if (bits == "0011")
+					{
+						hex += "3";
+					}
+					else if (bits == "0100")
+					{
+						hex += "4";
+					}
+					else if (bits == "0101")
+					{
+						hex += "5";
+					}
+					else if (bits == "0110")
+					{
+						hex += "6";
+					}
+					else if (bits == "0111")
+					{
+						hex += "7";
+					}
+					else if (bits == "1000")
+					{
+						hex += "8";
+					}
+					else if (bits == "1001")
+					{
+						hex += "9";
+					}
+					else if (bits == "1010")
+					{
+						hex += "A";
+					}
+					else if (bits == "1011")
+					{
+						hex += "B";
+					}
+					else if (bits == "1100")
+					{
+						hex += "C";
+					}
+					else if (bits == "1101")
+					{
+						hex += "D";
+					}
+					else if (bits == "1110")
+					{
+						hex += "E";
+					}
+					else if (bits == "1111")
+					{
+						hex += "F";
+					}
+				}
+				cout << "The number is : " << hex;
+			}
 		}
 	}
 	return 0;
