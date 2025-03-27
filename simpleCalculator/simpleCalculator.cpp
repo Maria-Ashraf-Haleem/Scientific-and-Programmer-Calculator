@@ -50,21 +50,28 @@ void showAnswer(double answer)
 
 void showProgrammer()
 {
-	cout << "---------------------------------------------------------\n\n";
-	cout << "        Decimal              |         Binary            \n ";
-	cout << "                            |                           \n";
-	cout << "    ----------------         |       --------------      \n\n";
-	cout << "                             |                            \n";
-	cout << "      Hexadecimal            |          Octal            \n";
-	cout << "                             |                           \n\n";
-	cout << "1- Decimal to any other system \n";
-	cout << "2- any other system to Decimal \n";
-	cout << "3- Hexadecimal to octal and vice versa \n";
-	cout << "4- Octal to Binary and vice versa \n";
-	cout << "5- Hexadecimal to Binary and vice versa \n";
-	cout << "6- Exit the Calulator\n";
-	cout << "---------------------------------------------------------\n";
+	cout << "=======================================================\n";
+	cout << "|          	Programmer Calculator                 |\n";
+	cout << "=======================================================\n";
+
+	cout << "|   Decimal               |   Binary                  |\n";
+	cout << "|   -------------------   |   ---------------------   |\n";
+	cout << "|                         |                           |\n";
+	cout << "|   Hexadecimal           |   Octal                   |\n";
+	cout << "|   -------------------   |   ---------------------   |\n";
+	cout << "|                                                     |\n";
+
+	cout << "|   [1] Decimal to any other system                   |\n";
+	cout << "|   [2] Any other system to Decimal                   |\n";
+	cout << "|   [3] Hexadecimal to Octal and vice versa           |\n";
+	cout << "|   [4] Octal to Binary and vice versa                |\n";
+	cout << "|   [5] Hexadecimal to Binary and vice versa          |\n";
+	cout << "|   [6] Exit the Calculator                           |\n";
+
+	cout << "=======================================================\n";
 }
+
+
 
 string binaryToHexadecimal(string bin)
 {
